@@ -1,5 +1,9 @@
 # Lightwaypro
 
+This a POC ( Proof of concept) or a prototype of light my way.
+The prupose of the project is to set up a web applicaiton where a user can state it feeling based on a location report going on works, view road where light are missing.
+Those information are displayd on the map.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
