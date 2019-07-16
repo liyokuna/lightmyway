@@ -1,4 +1,16 @@
 .map {
-    height: 70%;
+    height: 100%;
     width: 100%;
   }
+
+.container-fluid .btn-group {
+  position: absolute;
+  bottom: 50%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
