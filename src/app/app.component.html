@@ -1,18 +1,41 @@
-<div class="container-fluid">
-  <div id="map" class="map">
-  </div>
-  <div class="col text-right">
-    <div class="btn-group dropup">
-      <button type="button" class="btn btn-secondary">
+<div class="ctn">
+  <div id="map" class="map"></div>
+  <div class="col">
+    <div class="btngroup">
+      <button type="button" (click)="getPosition()" class="btn btn-secondary addmargin">
         Centre
       </button>
-      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
+      <button type="button" class="btn btn-secondary addmargin" data-toggle="modal" data-target="#signalModal">
+        Signaler
       </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Signaler</a>
-        <a class="dropdown-item" href="#">Paramètrer</a>
+
+      <div class="modal fade" id="signalModal" tabindex="-1" role="dialog" aria-labelledby="signalModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signalModalLabel">Signalement</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="message-text" placeholder="commentaire"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+              <button type="button" class="btn btn-primary">Envoyer</button>
+            </div>
+          </div>
+        </div>
       </div>
+
   </div>
 </div>
 
