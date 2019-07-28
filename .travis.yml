@@ -1,0 +1,23 @@
+dist: trusty
+sudo: false
+
+language: node_js
+node_js:
+  - "10.4.1"
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+     - ./node_modules
+
+install:
+  - npm install
+
+after_success:
+  - codecov
+
+script:
+  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
+  - npm run build -- --no-watch --no-progress --browsers=ChromeHeadless
