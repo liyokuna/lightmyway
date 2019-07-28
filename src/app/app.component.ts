@@ -73,5 +73,4 @@ export class AppComponent implements AfterViewInit, OnInit {
     view.setCenter(this.proj.fromLonLat([this.longitude, this.latitude]));
     view.setZoom(8);
   }
-
 }
