@@ -20,4 +20,4 @@ after_success:
 
 script:
   - npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
-  - npm run build -- --no-watch --no-progress --browsers=ChromeHeadless
+  - npm run build
