@@ -7,7 +7,8 @@ import Map from 'ol/Map';
 import OlXYZ from 'ol/source/XYZ';
 import OlTileLayer from 'ol/layer/Tile';
 import OlView from 'ol/View';
-declare var ol: any;
+import OSM from 'ol/source/OSM';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,6 +24,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   public geo: Geolocation;
   public projection: Projection;
   public proj: Proj;
+  public osm: OSM;
   public display_toast : boolean = false;
   public autohide = true;
   latitude: number = 45.188529;
@@ -38,8 +40,9 @@ export class AppComponent implements AfterViewInit, OnInit {
       });
       
       this.view = new OlView({
+        projection: 'EPSG:4326',
         center: [6.661594, 50.433237],
-        zoom: 3
+        zoom: 8
       });
       
       this.map = new Map({
@@ -59,18 +62,18 @@ export class AppComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
     this.map.setTarget('map');
     this.geo.setTracking(true);
-    this.setCenter();
-    console.log(this.proj);
+    this.setCenter(this.longitude, this.latitude);
   }
 
   getPosition() {
     console.log(this.geo.getPosition());
+    this.setCenter(this.geo.getPosition()[0], this.geo.getPosition()[1]);
   }
 
-  setCenter() {
+  setCenter(long, lat) {
     console.log(this.proj);
     var view = this.map.getView();
-    view.setCenter(this.proj.fromLonLat([this.longitude, this.latitude]));
-    view.setZoom(8);
+    view.setCenter([long, lat]);
+    view.setZoom(15);
   }
 }
