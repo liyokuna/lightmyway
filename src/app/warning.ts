@@ -6,6 +6,6 @@ export class Warning {
         secure: boolean,
         comments: string,
         long: number,
-         lat: number,
+        lat: number,
     ){}
 }

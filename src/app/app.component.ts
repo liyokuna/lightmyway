@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import Warning from './warning';
+import { Warning } from './warning';
 import Geolocation from 'ol/Geolocation';
 import Projection from 'ol/proj/Projection';
 import Proj from 'ol/proj.js';
@@ -38,7 +38,9 @@ export class AppComponent implements AfterViewInit, OnInit {
       peopleSwitch: '',
       lightSwitch: '',
       securePlaceSwitch: '',
-      messageText: ''
+      messageText: '',
+      long: '',
+      lat: ''
     });
   }
 
@@ -91,7 +93,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   onSubmit(Datas) {
     // Process checkout data here
     console.warn('Your order has been submitted', Datas);
- 
+    
     this.form.reset();
   }
 }
