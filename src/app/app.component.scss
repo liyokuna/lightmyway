@@ -15,3 +15,9 @@
 .addmargin {
   margin: 0.3rem;
 }
+
+.custom-control-input:checked~.custom-control-label::before {
+  color: #fff;
+  border-color: #04ff00 !important;
+  background-color: #04ff00 !important;
+}

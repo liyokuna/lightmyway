@@ -18,20 +18,37 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
             <div class="modal-body">
-              <form>
+              
                 <div class="form-group">
-                  <input type="text" class="form-control" id="recipient-name">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="peopleSwitch" formControlName="peopleSwitch">
+                    <label class="custom-control-label" for="peopleSwitch">Du monde</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="message-text" placeholder="commentaire"></textarea>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="lightSwitch" formControlName="lightSwitch">
+                    <label class="custom-control-label" for="lightSwitch">Lieu éclairé</label>
+                  </div>
                 </div>
-              </form>
+                <div class="form-group">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="securePlaceSwitch" formControlName="securePlaceSwitch">
+                    <label class="custom-control-label" for="securePlaceSwitch">Ambiance Secure</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="messageText" placeholder="commentaire" formControlName="messageText"></textarea>
+                </div>
+              
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-              <button type="button" class="btn btn-primary">Envoyer</button>
+              <button type="submit" class="btn btn-primary">Envoyer</button>
             </div>
+          </form>
           </div>
         </div>
       </div>

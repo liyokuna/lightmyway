@@ -1,4 +1,6 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
+import Warning from './warning';
 import Geolocation from 'ol/Geolocation';
 import Projection from 'ol/proj/Projection';
 import Proj from 'ol/proj.js';
@@ -27,8 +29,18 @@ export class AppComponent implements AfterViewInit, OnInit {
   public osm: OSM;
   public display_toast : boolean = false;
   public autohide = true;
+  public form;
   latitude: number = 45.188529;
   longitude: number = 5.724524;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      peopleSwitch: '',
+      lightSwitch: '',
+      securePlaceSwitch: '',
+      messageText: ''
+    });
+  }
 
   ngOnInit() {
     this.source = new OlXYZ({
@@ -71,9 +83,15 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
 
   setCenter(long, lat) {
-    console.log(this.proj);
     var view = this.map.getView();
     view.setCenter([long, lat]);
     view.setZoom(15);
+  }
+
+  onSubmit(Datas) {
+    // Process checkout data here
+    console.warn('Your order has been submitted', Datas);
+ 
+    this.form.reset();
   }
 }
