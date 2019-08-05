@@ -1,5 +1,17 @@
-<div class="ctn">
+<div>
   <div id="map" class="map"></div>
+  <div class="col">
+    <div class="btndest">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Destination" aria-label="Destination" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" id="button-addon2">Button</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
   <div class="col">
     <div class="btngroup">
       <button type="button" (click)="getPosition()" class="btn btn-secondary addmargin">

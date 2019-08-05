@@ -1,15 +1,50 @@
 .map {
-    height: 100%;
-    width: 100%;
-  }
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
 
-.ctn .btngroup {
+@media only screen and (max-width: 600px) {
+  .map {
+    height: 45rem !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .map {
+    height: 40rem !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .map {
+    height: 35rem !important;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .map {
+    height: 40rem !important;
+  }
+}
+
+.btngroup {
   position: absolute;
   bottom: 50%;
   right: 10%;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.btndest {
+  position: absolute;
+  top:-40rem;
+  right: 9%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  //transform: translate(0, -1000%);
 }
 
 .addmargin {

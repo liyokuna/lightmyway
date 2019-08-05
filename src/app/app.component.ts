@@ -30,6 +30,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   public display_toast : boolean = false;
   public autohide = true;
   public form;
+  public destination;
   latitude: number = 45.188529;
   longitude: number = 5.724524;
 
@@ -56,7 +57,7 @@ export class AppComponent implements AfterViewInit, OnInit {
       this.view = new OlView({
         projection: 'EPSG:4326',
         center: [6.661594, 50.433237],
-        zoom: 8
+        zoom: 15
       });
       
       this.map = new Map({
@@ -87,7 +88,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   setCenter(long, lat) {
     var view = this.map.getView();
     view.setCenter([long, lat]);
-    view.setZoom(15);
+    view.setZoom(25);
   }
 
   onSubmit(Datas) {
